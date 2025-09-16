@@ -4,8 +4,10 @@ import { LEADER_BOARD_API } from './utils/apiConstants';
 import { attachParams } from './utils/helpers';
 import RankTable from './components/rankTable';
 import Header from './components/header';
+import { useDeviceType } from './hooks/useDeviceType';
 
 export default function App() {
+  const device = useDeviceType();
   const [data, setData] = useState([]);
   const [userData, setUserData] = useState([]);
   const [cardData, setCardData] = useState([]);
@@ -61,9 +63,13 @@ export default function App() {
   ];
 
   return (
-    <div className="px-16 pb-4">
+    <div className={`${device === 'desktop' ? 'px-16' : 'px-4'}  pb-4`}>
       <Header />
-      <div className="w-full flex gap-6 justify-center">
+      <div
+        className={`w-full flex gap-6 justify-center ${
+          device !== 'desktop' && 'hidden'
+        }`}
+      >
         {cardData?.map((d, i) => (
           <RankCard
             key={i}

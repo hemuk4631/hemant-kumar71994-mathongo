@@ -7,6 +7,7 @@ import {
   TableRow,
 } from '@/components/ui/table';
 import PaginationComponent from './paginationComponent';
+import { useDeviceType } from '@/hooks/useDeviceType';
 interface RankTableProps {
   columnData: unknown[];
   data: unknown[];
@@ -22,9 +23,14 @@ function RankTable({
   setCurrentPage,
   totalPages,
 }: RankTableProps) {
+  const device = useDeviceType();
   return (
     <>
-      <div className="mt-6 flex flex-col h-[400px] border rounded-xl">
+      <div
+        className={`mt-6 flex flex-col ${
+          device === 'desktop' ? 'h-[400px]' : 'h-[696px]'
+        }  border rounded-xl`}
+      >
         <div className="flex-1 overflow-y-auto relative">
           <Table className="table-fixed border-collapse">
             <colgroup>

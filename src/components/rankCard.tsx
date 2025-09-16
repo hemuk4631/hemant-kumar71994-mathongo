@@ -66,12 +66,12 @@ function RankCard({
   const style = getCardStyle(rank);
   return (
     <Card
-      className={`rounded-xl w-full h-[24.5rem] rounded-b-none border-b-0
+      className={`rounded-t-3xl w-full h-[24.5rem] rounded-b-none border-b-0
         shadow-none ${rank <= 3 && 'border-0'} p-[2px]`}
       style={{ background: style.border }}
     >
       <div
-        className="w-full h-full rounded-xl"
+        className="w-full h-full rounded-t-3xl"
         style={{ background: style.background }}
       >
         <div className="flex justify-center flex-col items-center gap-4 mt-6">
@@ -91,7 +91,7 @@ function RankCard({
             <Ordinal value={rank} /> Rank
           </CardDescription>
         </div>
-        <CardContent className="font-medium text-[#60748f] flex flex-col gap-4">
+        <CardContent className="font-medium text-[#60748f] flex flex-col gap-4 mt-6">
           <div className="flex justify-between">
             <h3>Overall Score</h3>
             <h3 className="font-normal">
