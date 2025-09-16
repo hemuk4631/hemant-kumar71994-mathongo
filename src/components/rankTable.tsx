@@ -53,7 +53,7 @@ function RankTable({
                 {columnData?.map((c, i) => (
                   <TableHead
                     key={i}
-                    className="sticky top-0 z-20 bg-[#F5F9FE] backdrop-blur-sm border-b"
+                    className="sticky top-0 z-20 backdrop-blur-sm border-b"
                   >
                     {c?.header}
                   </TableHead>
@@ -72,7 +72,7 @@ function RankTable({
                       <div
                         className={`${
                           c.header === 'Rank' &&
-                          'bg-[#F5F9FE] w-[8px] h-[16px]  flex items-center justify-center  p-3 border border-solid rounded-full'
+                          'w-[8px] h-[16px]  flex items-center justify-center  p-3 border border-solid rounded-full'
                         }`}
                       >
                         <div className="flex items-center gap-4">
@@ -86,12 +86,12 @@ function RankTable({
 
                           <span
                             className={`${
-                              c.maxMarks && 'bg-[#F5F9FE] rounded-3xl px-3 py-1'
+                              c.maxMarks && 'rounded-3xl px-3 py-1'
                             }`}
                           >
                             {c?.cell(row)}
                             {c.maxMarks && (
-                              <span className="text-[#5B6480] text-[12px]">{`/${c?.maxMarks}`}</span>
+                              <span className="text-[12px]">{`/${c?.maxMarks}`}</span>
                             )}
                           </span>
                         </div>
@@ -103,7 +103,7 @@ function RankTable({
             </TableBody>
           </Table>
         </div>
-        <div className="border-t p-2 bg-white">
+        <div className="border-t p-2">
           <PaginationComponent
             currentPage={currentPage}
             setCurrentPage={setCurrentPage}

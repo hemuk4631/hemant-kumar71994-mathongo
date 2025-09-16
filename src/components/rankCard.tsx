@@ -55,12 +55,7 @@ function RankCard({
           rankColor: 'var(--rank3-rank-color)',
         };
       default:
-        return {
-          border: 'transpaent',
-          background: 'white',
-          rankBg: '#f1f5f9',
-          rankColor: '#000',
-        };
+        return {};
     }
   };
   const style = getCardStyle(rank);
@@ -80,7 +75,7 @@ function RankCard({
             alt="profile_pic"
             className="rounded-full size-16"
           />
-          <CardTitle className="text-[#1D2933] font-bold">{name}</CardTitle>
+          <CardTitle className="font-bold">{name}</CardTitle>
           <CardDescription
             className={`rounded-2xl py-1 px-3`}
             style={{
@@ -91,11 +86,11 @@ function RankCard({
             <Ordinal value={rank} /> Rank
           </CardDescription>
         </div>
-        <CardContent className="font-medium text-[#60748f] flex flex-col gap-4 mt-6">
+        <CardContent className="font-medium  flex flex-col gap-4 mt-6">
           <div className="flex justify-between">
             <h3>Overall Score</h3>
             <h3 className="font-normal">
-              <span className="text-[#1D2933] font-bold">{overAll}</span>/
+              <span className="font-bold">{overAll}</span>/
               <span>{maxMarks}</span>
             </h3>
           </div>

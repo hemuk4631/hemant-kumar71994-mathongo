@@ -5,9 +5,10 @@ import { attachParams } from './utils/helpers';
 import RankTable from './components/rankTable';
 import Header from './components/header';
 import { useDeviceType } from './hooks/useDeviceType';
-
+import { useSystemTheme } from './hooks/useSystemTheme';
 export default function App() {
   const device = useDeviceType();
+  const theme = useSystemTheme();
   const [data, setData] = useState([]);
   const [userData, setUserData] = useState([]);
   const [cardData, setCardData] = useState([]);
@@ -91,7 +92,6 @@ export default function App() {
             currentPage={currentPage}
             setCurrentPage={setCurrentPage}
             totalPages={totalPages}
-            userData={userData}
           />
         </div>
       )}
